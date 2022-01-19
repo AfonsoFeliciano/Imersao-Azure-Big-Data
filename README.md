@@ -2,9 +2,9 @@
 
 Treinamento Azure Data Factory + Azure Databricks + Azure Analysis Services + Power BI realizado em janeiro de 2022 com o objetivo de abordar técnicas para ingestão e tratamento de dados utilizando a suíte Azure. O treinamento foi ministrado por: 
 
-- <a href="https://www.linkedin.com/in/luizfsantana/" >Luiz Santana</a>   
-- <a href="https://www.linkedin.com/in/fabiofsantos/" > Fábio Santos</a> 
-- <a href="https://www.linkedin.com/in/matheusandradeg/" > Matheus Andrade</a> 
+- <a href="https://www.linkedin.com/in/luizfsantana/" target="_blank">Luiz Santana</a>   
+- <a href="https://www.linkedin.com/in/fabiofsantos/" target="_blank"> Fábio Santos</a> 
+- <a href="https://www.linkedin.com/in/matheusandradeg/" target="_blank"> Matheus Andrade</a> 
 
 
 ## Conteúdos Azure Data Factory
