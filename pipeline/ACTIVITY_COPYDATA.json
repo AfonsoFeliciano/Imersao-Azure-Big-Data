@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "csv_to_sql_azure",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
