@@ -1,0 +1,9 @@
+{
+	"name": "adf-turmaimersaoafonso",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "662db29e-ab7e-4e81-a396-0ddfc3c4d235",
+		"tenantId": "35eca57b-16d8-465b-8b82-2ae2348070ef"
+	}
+}
