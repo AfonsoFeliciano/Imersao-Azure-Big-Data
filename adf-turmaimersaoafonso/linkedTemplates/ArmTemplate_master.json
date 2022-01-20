@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-turmaimersaoafonso"
+		},
+		"ls_datalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlsturma01imersaoafonso.dfs.core.windows.net"
+		},
+		"ls_diretorio_local_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\afonso.feliciano\\Downloads\\imersao-azure-datasets"
+		},
+		"ls_diretorio_local_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "afonso.feliciano"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://akv-turma01imersaoafonso.vault.azure.net/"
+		},
+		"ls_sqldatabase_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "kvstringconnsqldatabase"
+		},
+		"ls_sqlserver_onpremise_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "kvstringconnsqllocal"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-turmaimersaoafonso_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_keyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_keyvault_properties_typeProperties_baseUrl')]"
+					},
+					"ls_datalake_properties_typeProperties_url": {
+						"value": "[parameters('ls_datalake_properties_typeProperties_url')]"
+					},
+					"ls_diretorio_local_properties_typeProperties_host": {
+						"value": "[parameters('ls_diretorio_local_properties_typeProperties_host')]"
+					},
+					"ls_diretorio_local_properties_typeProperties_userId": {
+						"value": "[parameters('ls_diretorio_local_properties_typeProperties_userId')]"
+					},
+					"ls_sqldatabase_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_sqldatabase_properties_typeProperties_connectionString_secretName')]"
+					},
+					"ls_sqlserver_onpremise_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_sqlserver_onpremise_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
