@@ -73,7 +73,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('filtrar arquivos csv').outputvalue",
+						"value": "@activity('filtrar arquivos csv').output.value",
 						"type": "Expression"
 					},
 					"activities": [
