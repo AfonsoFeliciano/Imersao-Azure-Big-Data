@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-turmaimersaoafonso"
+		},
+		"ls_datalake_properties_typeProperties_url": {
+			"value": "https://dlsturma01imersaoafonso.dfs.core.windows.net"
+		},
+		"ls_diretorio_local_properties_typeProperties_host": {
+			"value": "C:\\Users\\afonso.feliciano\\Downloads\\imersao-azure-datasets"
+		},
+		"ls_diretorio_local_properties_typeProperties_userId": {
+			"value": "afonso.feliciano"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://akv-turma01imersaoafonso.vault.azure.net/"
+		},
+		"ls_sqldatabase_properties_typeProperties_connectionString_secretName": {
+			"value": "kvstringconnsqldatabase"
+		},
+		"ls_sqlserver_onpremise_properties_typeProperties_connectionString_secretName": {
+			"value": "kvstringconnsqllocal"
+		}
+	}
+}
