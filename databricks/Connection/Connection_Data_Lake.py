@@ -1,10 +1,12 @@
 # Databricks notebook source
+# DBTITLE 1,Criando conexão com o Data Lake
 spark.conf.set(
     "fs.azure.account.key.dlsturma01imersaoafonso.dfs.core.windows.net", 
     dbutils.secrets.get(scope="keyvault2", key="kvkeydatalake"))
 
 # COMMAND ----------
 
+# DBTITLE 1,Criando variável de configuração para autenticação no Data Lake
 configs = {"fs.azure.account.auth.type": "OAuth", 
            "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider", 
            "fs.azure.account.oauth2.client.id": dbutils.secrets.get(scope="keyvault2", key="applicationClientId"),
@@ -13,6 +15,7 @@ configs = {"fs.azure.account.auth.type": "OAuth",
 
 # COMMAND ----------
 
+# DBTITLE 1,Criando ponto de montagem das camadas
 zones = ["raw", "trusted", "refined"]
 for zone in zones:
 
