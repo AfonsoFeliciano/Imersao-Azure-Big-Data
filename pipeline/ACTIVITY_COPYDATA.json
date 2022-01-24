@@ -36,9 +36,13 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
@@ -55,19 +59,18 @@
 						"referenceName": "ds_generico_csv",
 						"type": "DatasetReference",
 						"parameters": {
-							"ContainerName": "raw",
-							"FileName": "cidades.csv",
+							"ContainerName": "raw/Customer",
+							"FileName": "Customer.csv",
 							"SeparatorFile": ";"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_generico_azuresql",
+						"referenceName": "ds_generico_parquet_dataflow",
 						"type": "DatasetReference",
 						"parameters": {
-							"SchemaName": "SalesLT",
-							"TableName": "TabelaCidades"
+							"ContainerName": "raw"
 						}
 					}
 				]
