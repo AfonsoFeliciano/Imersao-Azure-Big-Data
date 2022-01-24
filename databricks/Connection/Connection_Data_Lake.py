@@ -29,8 +29,12 @@ for zone in zones:
 
 # COMMAND ----------
 
-# MAGIC %fs ls /mnt/raw/
+#%fs ls /mnt/raw/
 
 # COMMAND ----------
 
 #dbutils.fs.unmount("/mnt/")
+
+# COMMAND ----------
+
+
